@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.color-button-container{
+  padding: 1rem;
+} 
+
+.color-button-container button {
+  margin: 5px;
+  padding: 5px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background: grey;
+  width: 100%;
+}
+
+
