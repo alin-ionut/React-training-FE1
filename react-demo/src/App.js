@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MyHeader from './components/Header'; 
+import MyHeader from './components/Header';
 import ColorButtons from './components/ColorButtons';
 import ColorChooser from './components/ColorChooser';
 import './App.css';
@@ -7,55 +7,58 @@ import './App.css';
 
 class App extends Component {
   state = {
-    inputColor: "",
-    buttonColor: "",
-    selectedColor: ""
+    inputColor: '',
+    buttonColor: '',
+    selectedColor: '',
   }
 
   onColorChange = (event) => {
     const { value } = event.target;
     const newValue = this.state.selectedColor + value;
     this.setState({
-      selectedColor: newValue
+      selectedColor: newValue,
     });
   }
 
   onSelectColor = (color) => {
     this.setState({
-      selectedColor: color
+      selectedColor: color,
     });
   }
 
   onFocus = () => {
     this.setState({
-      inputState: ''
+      inputState: '',
     });
   }
 
   render() {
     return (
       <div className="App">
-      <MyHeader 
-      title={"Hello React-Demo" }
-      color={this.state.selectedColor}
-      />
-      <div>
-        <ColorChooser 
-        selectedColor={this.state.inputColor}
-        onColorChange={this.onColorChange}
-        onFocus={this.onFocus}
+        <MyHeader
+          title="Hello React-Demo"
+          color={this.state.selectedColor}
         />
-      </div>
+        <div>
+          <ColorChooser
+            selectedColor={this.state.inputColor}
+            onColorChange={this.onColorChange}
+            onFocus={this.onFocus}
+          />
+        </div>
         <ColorButtons onSelectColor={this.onSelectColor} />
-        <Footer/>
+        <Footer />
       </div>
     );
   }
 }
 
-const Footer = () => {
-return<footer>
-  <p>ColorChooser Footer</p>
-</footer>}
+const Footer = () => (
+  <footer>
+    <p>
+      ColorChooser Footer
+    </p>
+  </footer>
+);
 
 export default App;
